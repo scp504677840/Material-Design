@@ -1,0 +1,159 @@
+<div class="demo-button">
+
+  <p>
+    <!-- 普通按钮 -->
+    <button md-button>Flat</button>
+
+    <!-- 涟漪按钮 -->
+    <button md-raised-button>Raised</button>
+
+    <!-- 带图标的浮动按钮 -->
+    <button md-fab>
+      <md-icon class="md-24">check</md-icon>
+    </button>
+
+    <!-- 文字浮动按钮 -->
+    <button md-fab>Btn</button>
+
+    <!-- 链接浮动按钮 -->
+    <a md-fab routerLink=".">Link</a>
+
+    <!-- 链接浮动按钮 -->
+    <a md-fab routerLink=".">
+      <md-icon class="md-24">check</md-icon>
+    </a>
+
+    <!-- 带图标的迷你浮动按钮 -->
+    <button md-mini-fab>
+      <md-icon class="md-24">check</md-icon>
+    </button>
+
+    <!-- 文字迷你浮动按钮 -->
+    <button md-mini-fab>
+      Btn
+    </button>
+
+    <!-- 链接迷你浮动按钮 -->
+    <a md-mini-fab routerLink=".">Link</a>
+
+  </p>
+
+  <!-- 一下演示的都是带链接的按钮 -->
+  <p>
+    <a href="http://www.baidu.com" md-button color="primary">Search</a>
+    <a href="http://www.baidu.com" md-raised-button color="primary">Search</a>
+    <a href="http://www.baidu.com" md-fab>
+      <md-icon class="md-24">check</md-icon>
+    </a>
+    <a href="http://www.baidu.com" md-mini-fab>
+      <md-icon class="md-24">check</md-icon>
+    </a>
+  </p>
+
+  <!-- 普通按钮在不同主题下的颜色 -->
+  <p>
+    <button md-button color="primary">primary</button>
+    <button md-button color="accent">accent</button>
+    <button md-button color="warn">warn</button>
+  </p>
+
+  <!-- 涟漪按钮在不同主题下的颜色 -->
+  <p>
+    <button md-raised-button color="primary">primary</button>
+    <button md-raised-button color="accent">accent</button>
+    <button md-raised-button color="warn">warn</button>
+  </p>
+
+  <!-- 浮动按钮在不同主题下的颜色 -->
+  <p>
+    <button md-fab color="primary">
+      <md-icon>home</md-icon>
+    </button>
+    <button md-fab color="accent">
+      <md-icon>favorite</md-icon>
+    </button>
+    <button md-fab color="warn">
+      <md-icon>feedback</md-icon>
+    </button>
+  </p>
+
+  <!-- 图标按钮在不同主题下的颜色 -->
+  <p>
+    <button md-icon-button color="primary">
+      <md-icon>menu</md-icon>
+    </button>
+    <button md-icon-button color="accent">
+      <md-icon>favorite</md-icon>
+    </button>
+    <button md-icon-button color="warn">
+      <md-icon>more_vert</md-icon>
+    </button>
+  </p>
+
+  <div>
+
+    <!-- 禁用状态下各种按钮的形态变化 -->
+    <div>
+
+      <p>isDisabled: {{isDisabled}}, clickCounter: <span>{{clickCounter}}</span></p>
+
+      <button md-raised-button (click)="isDisabled=!isDisabled">Disable buttons</button>
+
+      <button md-raised-button (click)="button1.focus()">Focus 1</button>
+      <button md-raised-button (click)="button2.focus()">Focus 2</button>
+      <button md-raised-button (click)="button3.focus()">Focus 3</button>
+
+    </div>
+
+    <button md-button #button1 [disabled]="isDisabled" (click)="clickCounter=clickCounter+1">off</button>
+    <button md-button color="primary" [disabled]="isDisabled">off</button>
+
+    <a href="#" md-button #button2 color="accent" [disabled]="isDisabled">off</a>
+
+    <button md-raised-button #button3 color="primary" [disabled]="isDisabled">off</button>
+
+    <button md-mini-fab color="warn" [disabled]="isDisabled">
+      <md-icon>check</md-icon>
+    </button>
+
+    <button md-icon-button color="warn" [disabled]="isDisabled">
+      <md-icon>favorite</md-icon>
+    </button>
+
+  </div>
+
+  <!-- 带链接的普通按钮与不带链接的普通按钮 -->
+  <p>
+    <a href="#" md-button color="primary">Search</a>
+    <button md-button>dance</button>
+  </p>
+
+  <!-- 带链接的涟漪按钮与不带链接的涟漪按钮 -->
+  <p>
+    <a href="#" md-raised-button color="primary">Search</a>
+    <button md-raised-button>dance</button>
+  </p>
+
+  <!-- 文字与图标组合涟漪按钮 -->
+  <p>
+    <button md-raised-button>More<md-icon>more_vert</md-icon></button>
+    <button md-raised-button>Check<md-icon>check</md-icon></button>
+    <button md-raised-button>Favorite<md-icon>favorite</md-icon></button>
+    <button md-raised-button>Last<md-icon>navigate_before</md-icon></button>
+  </p>
+
+  <!-- 文字与图标组合普通按钮 -->
+  <p>
+    <button md-button>More<md-icon>more_vert</md-icon></button>
+    <button md-button>Check<md-icon>check</md-icon></button>
+    <button md-button>Favorite<md-icon>favorite</md-icon></button>
+    <button md-button>Last<md-icon>navigate_before</md-icon></button>
+  </p>
+
+  <!-- 相互切换禁用状态的演示 -->
+  <p>
+    <button md-raised-button [disabled]="toggleDisable" (click)="toggleDisable=true">Disable</button>
+    <button md-button [disabled]="!toggleDisable" (click)="toggleDisable=false">Disable</button>
+  </p>
+
+</div>
