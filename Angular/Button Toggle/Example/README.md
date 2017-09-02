@@ -8,4 +8,4 @@
 ## md-button-toggle-group必填属性：name
 
 # Example演示结果：
-![Example](./Example/button-toggle_example.png)
+![Example](button-toggle_example.png)
