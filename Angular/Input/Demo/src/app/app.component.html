@@ -1,0 +1,519 @@
+<md-card class="demo-card demo-basic">
+
+  <md-toolbar color="primary">
+    基础
+  </md-toolbar>
+
+  <md-card-content>
+
+    <form>
+
+      <md-form-field class="demo-full-width">
+        <input mdInput placeholder="Company (disabled)" disabled value="Google">
+      </md-form-field>
+
+      <table class="demo-full-width" cellspacing="0">
+
+        <tr>
+          <td>
+            <md-form-field class="demo-full-width">
+              <input mdInput placeholder="长的名字将被截断">
+            </md-form-field>
+          </td>
+        </tr>
+
+      </table>
+
+      <div>
+
+        <md-form-field class="demo-full-width">
+          <textarea mdInput placeholder="Address">1600 Amphitheatre Pkway</textarea>
+        </md-form-field>
+
+        <md-form-field class="demo-full-width">
+          <textarea mdInput placeholder="Address 2"></textarea>
+        </md-form-field>
+
+      </div>
+
+      <table class="demo-full-width" cellspacing="0">
+        <tr>
+
+          <td>
+            <md-form-field class="demo-full-width">
+              <input mdInput placeholder="City" value="Mountain View">
+            </md-form-field>
+          </td>
+
+          <td>
+            <md-form-field class="demo-full-width">
+              <input mdInput placeholder="State" maxlength="2" value="CA">
+            </md-form-field>
+          </td>
+
+          <td>
+            <md-form-field class="demo-full-width">
+              <input mdInput #postalCode placeholder="Postal Code" maxlength="5" value="96351" pattern="[0-9]{5}">
+              <md-hint align="end">
+                <md-icon>mode_edit</md-icon>
+                <span aria-live="polite">{{postalCode.value.length}} / 5</span>
+              </md-hint>
+            </md-form-field>
+          </td>
+
+        </tr>
+      </table>
+
+    </form>
+
+  </md-card-content>
+
+</md-card>
+
+<!-- 演示错误信息 -->
+<md-card class="demo-card demo-basic">
+
+  <md-toolbar color="primary">错误信息</md-toolbar>
+
+  <md-card-content>
+
+    <h4>Regular(规则)</h4>
+
+    <div>
+
+      <md-form-field>
+        <input mdInput placeholder="example" [(ngModel)]="errorMessageExample1" required>
+        <md-error>这是必填项</md-error>
+      </md-form-field>
+
+      <md-form-field>
+        <input mdInput placeholder="email" [formControl]="emailFormControl">
+        <md-error *ngIf="emailFormControl.hasError('required')">
+          这是必填项
+        </md-error>
+        <md-error *ngIf="emailFormControl.hasError('pattern')">
+          请输入一个合法的Email地址
+        </md-error>
+      </md-form-field>
+
+    </div>
+
+    <h4>有提示的</h4>
+
+    <md-form-field>
+      <input mdInput placeholder="example" [(ngModel)]="errorMessageExample2" required>
+      <md-error>这是一个必填项</md-error>
+      <md-hint>请在这里输入内容</md-hint>
+    </md-form-field>
+
+    <!-- 不使用普通表单验证 -->
+    <form novalidate>
+      <h4>内部表单</h4>
+
+      <md-form-field>
+        <input mdInput name="example" placeholder="example" [(ngModel)]="errorMessageExample3" required>
+        <md-error>这是一个必填项</md-error>
+      </md-form-field>
+
+      <button color="primary" md-raised-button>Submit</button>
+
+    </form>
+
+    <h4>具有自定义错误功能</h4>
+
+    <md-form-field>
+      <input mdInput
+             placeholder="example"
+             [(ngModel)]="errorMessageExample4"
+             [errorStateMatcher]="customErrorStateMatcher"
+             required>
+      <md-error>这是一个必填项</md-error>
+    </md-form-field>
+
+  </md-card-content>
+
+</md-card>
+
+<md-card class="demo-card demo-basic">
+
+  <md-toolbar color="primary">前缀+后缀</md-toolbar>
+
+  <md-card-content>
+
+    <h4>Text</h4>
+    <md-form-field class="demo-text-align-end">
+      <input mdInput placeholder="amount">
+      <span mdPrefix>$&nbsp;</span>
+      <span mdSuffix>.00</span>
+    </md-form-field>
+
+    <h4>Icons</h4>
+    <md-form-field>
+      <input mdInput placeholder="amount">
+      <md-icon mdPrefix>attach_money</md-icon>
+      <md-icon mdSuffix>mode_edit</md-icon>
+    </md-form-field>
+
+    <h4>Icon buttons</h4>
+    <md-form-field>
+      <input mdInput placeholder="amount">
+      <button md-icon-button mdPrefix>
+        <md-icon>attach_money</md-icon>
+      </button>
+      <button md-icon-button mdSuffix>
+        <md-icon>mode_edit</md-icon>
+      </button>
+    </md-form-field>
+
+  </md-card-content>
+
+</md-card>
+
+<md-card class="demo-card demo-basic">
+
+  <md-toolbar color="primary">分割线颜色</md-toolbar>
+
+  <md-card-content>
+
+    <h4>Input</h4>
+    <md-form-field color="primary">
+      <input mdInput placeholder="Default Color" value="example">
+    </md-form-field>
+
+    <md-form-field color="accent">
+      <input mdInput placeholder="Accent Color" value="example">
+    </md-form-field>
+
+    <md-form-field color="warn">
+      <input mdInput placeholder="Warn Color" value="example">
+    </md-form-field>
+
+    <h4>Textarea</h4>
+    <md-form-field color="primary">
+      <textarea mdInput placeholder="Default Color">example</textarea>
+    </md-form-field>
+
+    <md-form-field color="accent">
+      <textarea mdInput placeholder="Accent Color">example</textarea>
+    </md-form-field>
+
+    <md-form-field color="warn">
+      <textarea mdInput placeholder="Warn Color">example</textarea>
+    </md-form-field>
+
+    <h4>错误信息</h4>
+    <md-form-field color="primary">
+      <input mdInput placeholder="Default Color" [(ngModel)]="dividerColorExample1" required>
+      <md-error>这是一个必填项</md-error>
+    </md-form-field>
+
+    <md-form-field color="accent">
+      <input mdInput placeholder="Accent Color" [(ngModel)]="dividerColorExample2" required>
+      <md-error>这是一个必填项</md-error>
+    </md-form-field>
+
+    <md-form-field color="warn">
+      <input mdInput placeholder="Warn Color" [(ngModel)]="dividerColorExample3" required>
+      <md-error>这是一个必填项</md-error>
+    </md-form-field>
+
+  </md-card-content>
+
+</md-card>
+
+<md-card class="demo-card demo-basic">
+
+  <md-toolbar color="primary">提示</md-toolbar>
+
+  <md-card-content>
+
+    <h4>Input</h4>
+
+    <div>
+
+      <md-form-field class="demo-full-width">
+        <input mdInput
+               #characterCountInputHintExample
+               placeholder="Character count (100 max)"
+               maxlength="100"
+               value="Hello world. How are you?">
+        <md-hint align="end" aria-live="polite">
+          {{characterCountInputHintExample.value.length}} / 100
+        </md-hint>
+      </md-form-field>
+
+    </div>
+
+    <h4>Textarea</h4>
+
+    <div>
+
+      <md-form-field class="demo-full-width">
+        <textarea mdInput
+                  #characterCountTextareaHintExample
+                  placeholder="Character count (100 max)"
+                  maxlength="100">Hello world. How are you?</textarea>
+        <md-hint align="end" aria-live="polite">
+          {{characterCountTextareaHintExample.value.length}} / 100
+        </md-hint>
+      </md-form-field>
+
+    </div>
+
+  </md-card-content>
+
+</md-card>
+
+<md-card class="demo-card demo-basic">
+
+  <md-toolbar color="primary">
+    <span>
+      Hello&nbsp;
+      <md-form-field color="accent">
+        <input mdInput [(ngModel)]="name" type="text" placeholder="First name">
+      </md-form-field>,
+      how are you?
+    </span>
+  </md-toolbar>
+
+  <md-card-content>
+
+    <div>
+      <md-form-field>
+        <input mdInput disabled placeholder="Disabled field" value="Value">
+      </md-form-field>
+      <md-form-field>
+        <input mdInput required placeholder="Required field">
+      </md-form-field>
+    </div>
+
+    <div>
+      <md-form-field class="demo-full-width">
+        <input mdInput placeholder="100% width placeholder">
+      </md-form-field>
+    </div>
+
+    <div>
+      <md-form-field class="demo-full-width">
+        <input mdInput #input placeholder="Character count (100 max)" maxlength="100">
+        <md-hint align="end" aria-live="polite">{{input.value.length}} / 100</md-hint>
+      </md-form-field>
+    </div>
+
+    <div>
+      <md-form-field class="demo-full-width" hintLabel="Hint Label">
+        <input mdInput placeholder="Show Hint Label">
+      </md-form-field>
+    </div>
+
+    <div>
+      <md-form-field>
+        <input mdInput>
+        <md-placeholder>
+          I
+          <md-icon>favorite</md-icon>
+          <b>bold</b> placeholder
+        </md-placeholder>
+        <md-hint>
+          I also
+          <md-icon>home</md-icon>
+          <i>italic</i> hint labels
+        </md-hint>
+      </md-form-field>
+    </div>
+
+    <div>
+      <md-form-field hintLabel="Hint Label" class="demo-full-width">
+        <input mdInput #hintLabelWithCharCount placeholder="显示带有字符数的提示标签">
+        <md-hint align="end" aria-live="polite">{{hintLabelWithCharCount.value.length}}</md-hint>
+      </md-form-field>
+    </div>
+
+    <div>
+      <md-form-field style="margin-bottom: 4em;">
+        <textarea mdInput #longHint placeholder="Enter text to count"></textarea>
+        <md-hint>
+          输入一些文本来计算其中有多少个字符。 字符数显示在右边。
+        </md-hint>
+        <md-hint align="end" style="white-space: nowrap" aria-live="polite">
+          Length：{{longHint.value.length}}
+        </md-hint>
+      </md-form-field>
+    </div>
+
+    <!-- 动态改变颜色 -->
+    <div>
+      <md-checkbox [(ngModel)]="color">Check to change the color:</md-checkbox>
+      <md-form-field [color]="color ? 'primary' : 'accent'">
+        <input mdInput [placeholder]="color ? 'Primary color' : 'Accent color'">
+      </md-form-field>
+    </div>
+
+    <div>
+      <md-checkbox [(ngModel)]="requiredField"> Check to make required:</md-checkbox>
+      <md-form-field>
+        <input mdInput [required]="requiredField"
+               [placeholder]="requiredField ? 'Required Field' : 'Not Required Field'">
+      </md-form-field>
+    </div>
+
+    <!-- 必填项需不需要*标记出来 -->
+    <div>
+      <md-checkbox [(ngModel)]="hideRequiredMarker">Check to hide the required marker:</md-checkbox>
+      <md-form-field [hideRequiredMarker]="hideRequiredMarker" style="width: 300px;">
+        <input mdInput required [placeholder]="hideRequiredMarker ? '无需标记' : '需要标记'">
+      </md-form-field>
+    </div>
+
+    <div>
+      <md-button-toggle-group [(ngModel)]="floatingLabel">
+        <md-button-toggle value="auto">Auto Float</md-button-toggle>
+        <md-button-toggle value="always">Always Float</md-button-toggle>
+        <md-button-toggle value="never">Never Float</md-button-toggle>
+      </md-button-toggle-group>
+    </div>
+
+    <div>
+      <md-form-field [floatPlaceholder]="floatingLabel">
+        <input mdInput placeholder="Placeholder">
+      </md-form-field>
+    </div>
+
+    <div>
+      <md-form-field>
+        <input mdInput placeholder="Prefixed" value="example">
+        <div mdPrefix>Example：&nbsp;</div>
+      </md-form-field>
+
+      <md-form-field class="demo-text-align-end">
+        <input mdInput placeholder="Suffixed" value="example">
+        <div mdSuffix>.00 €</div>
+      </md-form-field>
+
+      <br>
+
+      Both:
+      <md-form-field class="demo-text-align-end">
+        <input mdInput #email placeholder="Email Address" value="angular-core">
+        <span mdPrefix><md-icon [class.primary]="email.focused">email</md-icon></span>
+        <span mdSuffix [class.primary]="email.focused">&nbsp;@gmail.com</span>
+      </md-form-field>
+    </div>
+
+    <div>
+      Empty：
+      <md-form-field><input mdInput></md-form-field>
+      <label>Label：
+        <md-form-field><input mdInput></md-form-field>
+      </label>
+    </div>
+
+  </md-card-content>
+
+</md-card>
+
+<md-card class="demo-card demo-basic">
+
+  <md-toolbar color="primary">数字输入</md-toolbar>
+
+  <md-card-content>
+
+    <table class="demo-full-width">
+
+      <thead>
+      <td>Table</td>
+      <td colspan="3">
+        <button (click)="addABunch(5)">Add 5</button>
+        <button (click)="addABunch(10)">Add 10</button>
+        <button (click)="addABunch(100)">Add 100</button>
+        <button (click)="addABunch(1000)">Add 1000</button>
+      </td>
+      </thead>
+
+      <tr *ngFor="let item of items;let i = index;">
+        <td>{{i+1}}</td>
+        <td>
+          <md-form-field>
+            <input mdInput
+                   type="number"
+                   placeholder="value"
+                   aria-label="hello"
+                   [(ngModel)]="items[i].value">
+          </md-form-field>
+        </td>
+        <td>
+          <input type="number" [(ngModel)]="items[i].value">
+        </td>
+        <td>{{item.value}}</td>
+      </tr>
+
+    </table>
+
+  </md-card-content>
+
+</md-card>
+
+<md-card class="demo-card demo-basic">
+
+  <md-toolbar color="primary">Forms</md-toolbar>
+
+  <md-card-content>
+
+    <md-form-field>
+      <input mdInput placeholder="reactive" [formControl]="formControl">
+    </md-form-field>
+
+    <md-form-field>
+      <input mdInput placeholder="template" [(ngModel)]="model" required [disabled]="ctrlDisabled">
+    </md-form-field>
+
+    <button md-raised-button
+            color="primary"
+            (click)="formControl.enabled ? formControl.disable():formControl.enable()">禁止响应式</button>
+
+    <button md-raised-button color="primary" (click)="ctrlDisabled = !ctrlDisabled">
+      禁止模板式
+    </button>
+
+    <div>
+      <md-form-field>
+        <input mdInput placeholder="延迟值" [formControl]="delayedFormControl">
+      </md-form-field>
+    </div>
+
+  </md-card-content>
+
+</md-card>
+
+<md-card class="demo-card demo-basic">
+
+  <md-toolbar color="primary">Textarea自动调整</md-toolbar>
+
+  <md-card-content>
+
+    <h3>Regular &lt;textarea&gt;</h3>
+
+    <textarea class="demo-textarea" mdTextareaAutosize mdAutosizeMaxRows="10"></textarea>
+
+    <h3>&lt;textarea&gt; with md-form-field</h3>
+
+    <div>
+      <md-form-field>
+        <textarea mdInput mdTextareaAutosize mdAutosizeMaxRows="5" placeholder="Autosized textarea"></textarea>
+      </md-form-field>
+    </div>
+
+    <h3>&lt;textarea&gt; with ngModel</h3>
+
+    <div>
+      <label>Input with same ngModel <input [(ngModel)]="textareaNgModelValue"></label>
+    </div>
+
+    <label>
+      Plain textarea with auto size
+      <textarea mdTextareaAutosize [(ngModel)]="textareaNgModelValue"></textarea>
+    </label>
+
+  </md-card-content>
+
+</md-card>
