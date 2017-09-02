@@ -1,0 +1,67 @@
+<h1>基础演示</h1>
+<div class="demo-section">
+
+  <md-radio-button name="group1">Option 1</md-radio-button>
+  <md-radio-button name="group1">Option 2</md-radio-button>
+  <md-radio-button name="group1" disabled="true">Option3 (disabled)</md-radio-button>
+
+</div>
+
+<h1>颜色演示</h1>
+<div class="demo-section">
+
+  <md-radio-button name="group2">Default (accent)</md-radio-button>
+  <md-radio-button name="group2" color="primary">Primary</md-radio-button>
+  <md-radio-button name="group2" color="accent">Accent</md-radio-button>
+  <md-radio-button name="group2" color="warn">Warn</md-radio-button>
+
+</div>
+
+<h1>动态演示</h1>
+<div class="demo-section">
+
+  <div>
+
+    <span>isDisabled: {{isDisabled}}</span>
+    <button md-raised-button (click)="isDisabled=!isDisabled" class="demo-button">Disabled button</button>
+
+  </div>
+
+  <div>
+
+    <span>isRequired：{{isRequired}}</span>
+    <button md-raised-button (click)="isRequired=!isRequired">Required button</button>
+
+  </div>
+
+  <div>
+
+    <span><md-checkbox [(ngModel)]="isAlignEnd">Align End</md-checkbox></span>
+
+  </div>
+
+  <md-radio-group name="my_options" [disabled]="isDisabled" [required]="isRequired" [align]="isAlignEnd ? 'end' : 'start'">
+
+    <md-radio-button value="option_1">Option 1</md-radio-button>
+    <md-radio-button value="option_2">Option 2</md-radio-button>
+    <md-radio-button value="option_3">Option 3</md-radio-button>
+
+  </md-radio-group>
+
+</div>
+
+<h1>季节例子</h1>
+<h1>具有双向数据绑定的动态示例</h1>
+<div class="demo-section">
+
+  <md-radio-group name="more_options" [(ngModel)]="favoriteSeason">
+
+    <md-radio-button *ngFor="let season of seasonOptions" [value]="season">
+      {{season}}
+    </md-radio-button>
+
+  </md-radio-group>
+
+  <p>Your favorite season is: {{favoriteSeason}}</p>
+
+</div>
