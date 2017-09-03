@@ -1,0 +1,29 @@
+<div class="slide-toggle-example">
+
+  <md-slide-toggle color="primary" [(ngModel)]="firstToggle">
+    Default Slide Toggle
+  </md-slide-toggle>
+
+  <md-slide-toggle [(ngModel)]="firstToggle" disabled>
+    Disabled Slide Toggle
+  </md-slide-toggle>
+
+  <md-slide-toggle [disabled]="firstToggle">
+    禁用绑定
+  </md-slide-toggle>
+
+  <p>表单中需要滑动切换的示例。</p>
+
+  <form #form="ngForm" (ngSubmit)="onFormSubmit()" ngNativeValidate>
+
+    <md-slide-toggle name="slideToggle" required ngModel>
+      Slide Toggle
+    </md-slide-toggle>
+
+    <p>
+      <button md-raised-button type="submit"> Submit Form </button>
+    </p>
+
+  </form>
+
+</div>
