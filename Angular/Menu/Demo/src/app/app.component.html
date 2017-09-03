@@ -1,0 +1,194 @@
+<div class="demo-menu">
+  <div class="menu-section">
+
+    <p>You clicked on: {{selected}}</p>
+
+    <md-toolbar>
+      <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
+
+    <md-menu #menu="mdMenu">
+      <button md-menu-item *ngFor="let item of items" (click)="select(item.text)" [disabled]="item.disabled">
+        {{ item.text }}
+      </button>
+    </md-menu>
+
+  </div>
+
+  <div class="menu-section">
+
+    <p>嵌套菜单</p>
+
+    <md-toolbar>
+      <button md-icon-button [mdMenuTriggerFor]="animals">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
+
+    <!-- 一级菜单 -->
+    <md-menu #animals="mdMenu">
+      <button md-menu-item [mdMenuTriggerFor]="vertebrates">脊椎动物</button>
+      <button md-menu-item [mdMenuTriggerFor]="invertebrates">无脊椎动物</button>
+    </md-menu>
+
+    <!-- 二级菜单 -->
+    <md-menu #vertebrates="mdMenu">
+      <button md-menu-item [mdMenuTriggerFor]="fish">鱼类</button>
+      <button md-menu-item [mdMenuTriggerFor]="amphibians">两栖动物</button>
+      <button md-menu-item [mdMenuTriggerFor]="reptiles">爬行动物</button>
+      <button md-menu-item>鸟类</button>
+      <button md-menu-item>哺乳动物</button>
+    </md-menu>
+
+    <!-- 二级菜单 -->
+    <md-menu #invertebrates="mdMenu">
+      <button md-menu-item>昆虫</button>
+      <button md-menu-item>软体动物</button>
+      <button md-menu-item>甲壳类动物</button>
+      <button md-menu-item>珊瑚虫</button>
+      <button md-menu-item>蜘蛛</button>
+      <button md-menu-item>天鹅绒蠕虫</button>
+      <button md-menu-item>马蹄蟹</button>
+    </md-menu>
+
+    <!-- 三级菜单 -->
+    <md-menu #fish="mdMenu">
+      <button md-menu-item>金枪鱼</button>
+      <button md-menu-item>鲐鱼</button>
+      <button md-menu-item>青鱼</button>
+      <button md-menu-item>草鱼</button>
+    </md-menu>
+
+    <!-- 三级菜单 -->
+    <md-menu #amphibians="mdMenu">
+      <button md-menu-item>青蛙</button>
+      <button md-menu-item>大鲵(娃娃鱼)</button>
+      <button md-menu-item>蝾螈</button>
+      <button md-menu-item>蟾蜍</button>
+    </md-menu>
+
+    <!-- 三级菜单 -->
+    <md-menu #reptiles="mdMenu">
+      <button md-menu-item>乌龟</button>
+      <button md-menu-item>海龟</button>
+      <button md-menu-item>甲鱼</button>
+    </md-menu>
+
+  </div>
+
+  <div class="menu-section">
+
+    <p>点击这些将导航：</p>
+
+    <md-toolbar>
+      <button md-icon-button [mdMenuTriggerFor]="anchorMenu">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
+
+    <md-menu #anchorMenu="mdMenu">
+      <a md-menu-item *ngFor="let item of items" href="#" [disabled]="item.disabled">
+        {{ item.text }}
+      </a>
+    </md-menu>
+
+  </div>
+
+  <div class="menu-section">
+
+    <p>位置x：在...前面</p>
+
+    <md-toolbar class="end-icon">
+      <button md-icon-button [mdMenuTriggerFor]="posXMenu">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
+
+    <md-menu xPosition="before" #posXMenu="mdMenu" class="before">
+      <button md-menu-item *ngFor="let item of iconItems" [disabled]="item.disabled">
+        <md-icon>{{ item.icon }}</md-icon>
+        {{ item.text }}
+      </button>
+    </md-menu>
+
+  </div>
+
+  <div class="menu-section">
+
+    <p>位置y：在...上面</p>
+
+    <md-toolbar>
+      <button md-icon-button [mdMenuTriggerFor]="posYMenu">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
+
+    <md-menu yPosition="above" #posYMenu>
+      <button md-menu-item *ngFor="let item of items" [disabled]="item.disabled">
+        {{ item.text }}
+      </button>
+    </md-menu>
+
+  </div>
+</div>
+
+<div class="demo-menu">
+
+  <div class="menu-section">
+
+    <p>是否覆盖菜单按钮：false</p>
+
+    <md-toolbar>
+      <button md-icon-button [md-menu-trigger-for]="menuOverlay">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
+
+    <md-menu #menuOverlay="mdMenu" [overlapTrigger]="false">
+      <button md-menu-item *ngFor="let item of items" [disabled]="item.disabled">
+        {{item.text}}
+      </button>
+    </md-menu>
+
+  </div>
+
+  <div class="menu-section">
+
+    <p>位置x：前面，是否覆盖菜单按钮：false</p>
+
+    <md-toolbar class="end-icon">
+      <button md-icon-button [md-menu-trigger-for]="posXMenuOverlay">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
+
+    <md-menu #posXMenuOverlay="mdMenu" class="before" xPosition="before" [overlapTrigger]="false">
+      <button md-menu-item *ngFor="let item of iconItems" [disabled]="item.disabled">
+        <md-icon>{{item.icon}}</md-icon>
+        {{item.text}}
+      </button>
+    </md-menu>
+
+  </div>
+
+  <div class="menu-section">
+
+    <p>位置y：上面，是否覆盖菜单图标：false</p>
+
+    <md-toolbar>
+      <button md-icon-button [md-menu-trigger-for]="posYMenuOverlay">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
+
+    <md-menu #posYMenuOverlay="mdMenu" yPosition="above" [overlapTrigger]="false">
+      <button md-menu-item *ngFor="let item of items" [disabled]="item.disabled">
+        {{ item.text }}
+      </button>
+    </md-menu>
+
+  </div>
+
+</div>
