@@ -8,4 +8,4 @@
 ## 触发器：md-menu-trigger-for 与 mdMenuTriggerFor 相同
 
 # Demo演示结果：
-![Demo](./Demo/menu_demo.png)
+![Demo](menu_demo.png)
