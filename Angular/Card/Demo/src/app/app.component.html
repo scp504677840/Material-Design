@@ -1,109 +1,88 @@
 <div class="demo-card-container">
 
-  <!-- 普通Card -->
-  <md-card>
+  <mat-card>
     Hello
-  </md-card>
+  </mat-card>
 
-  <!-- md-card-title-group演示 -->
-  <md-card>
+  <mat-card>
+    <mat-card-title>
+      My Blog
+    </mat-card-title>
+  </mat-card>
 
-    <md-card-title-group>
+  <mat-card>
+    <mat-card-title>
+      My Blog
+    </mat-card-title>
+    <mat-card-subtitle>
+      this is my blog
+    </mat-card-subtitle>
+  </mat-card>
 
-      <md-card-title>Card with title</md-card-title>
+  <mat-card>
+    <mat-card-title-group>
+      <mat-card-title>
+        My Blog
+      </mat-card-title>
+      <mat-card-subtitle>
+        this is a blog
+      </mat-card-subtitle>
+      <img mat-card-md-image src="http://avatar.csdn.net/4/E/8/1_y1scp.jpg">
+    </mat-card-title-group>
+  </mat-card>
 
-      <md-card-subtitle>Subtitle</md-card-subtitle>
-
-      <!-- 小 -->
-      <img md-card-sm-image>
-      <!-- 中 -->
-      <img md-card-md-image>
-      <!-- 大 -->
-      <img md-card-lg-image>
-
-    </md-card-title-group>
-
-  </md-card>
-
-  <!-- Card with title and footer演示 -->
-  <md-card>
-
-    <md-card-subtitle>Subtitle</md-card-subtitle>
-
-    <md-card-title>Card with title and footer</md-card-title>
-
-    <md-card-content>
+  <mat-card>
+    <mat-card-subtitle>Subtitle</mat-card-subtitle>
+    <mat-card-title>Card with title and footer</mat-card-title>
+    <mat-card-content>
       <p>This is supporting text.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </md-card-content>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
 
-    <md-card-actions>
-
-      <button md-button>LIKE</button>
-      <button md-button>SHARE</button>
-
-    </md-card-actions>
-
-    <md-card-footer>
-
-      <md-progress-bar mode="indeterminate"></md-progress-bar>
-
-    </md-card-footer>
-
-  </md-card>
-
-  <!-- md-card-image演示 -->
-  <md-card>
-
-    <img md-card-image src="https://material.angularjs.org/latest/img/washedout.png">
-
-    <md-card-title>Content Title</md-card-title>
-
-    <md-card-content>
+  <mat-card>
+    <img mat-card-image src="https://material.angularjs.org/latest/img/washedout.png">
+    <mat-card-title>Content Title</mat-card-title>
+    <mat-card-content>
       <p>Here is some content</p>
-    </md-card-content>
+    </mat-card-content>
+    <mat-card-actions align="start">
+      <button mat-button>Start</button>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+    <mat-card-actions align="end">
+      <button mat-button>End</button>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
 
-    <md-card-actions align="end">
-
-      <button md-button>LIKE</button>
-      <button md-button>SHARE</button>
-
-    </md-card-actions>
-
-  </md-card>
-
-  <!-- md-card-header演示 -->
-  <md-card>
-
-    <md-card-header>
-
-      <img md-card-avatar>
-
-      <md-card-title>Header Title</md-card-title>
-
-      <md-card-subtitle>Header Subtitle</md-card-subtitle>
-
-    </md-card-header>
-
-    <img md-card-image src="https://material.angularjs.org/latest/img/washedout.png">
-
-    <md-card-content>
+  <mat-card>
+    <mat-card-header>
+      <img mat-card-avatar src="http://avatar.csdn.net/4/E/8/1_y1scp.jpg">
+      <mat-card-title>My Blog</mat-card-title>
+      <mat-card-subtitle>this is my blog</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angularjs.org/latest/img/washedout.png">
+    <mat-card-content>
       <p>Here is some content</p>
-    </md-card-content>
+    </mat-card-content>
+  </mat-card>
 
-  </md-card>
-
-  <md-card class="demo-card-blue mat-card-flat">
-
-    <md-card-title>Easily customizable</md-card-title>
-
-    <md-card-actions>
-
-      <button md-button>First</button>
-      <button md-button>Second</button>
-
-    </md-card-actions>
-
-  </md-card>
+  <mat-card class="demo-card-blue">
+    <mat-card-title>Easily customizable</mat-card-title>
+    <mat-card-actions>
+      <button mat-button>First</button>
+      <button mat-button>Second</button>
+    </mat-card-actions>
+  </mat-card>
 
 </div>

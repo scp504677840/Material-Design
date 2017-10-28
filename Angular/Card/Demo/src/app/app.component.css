@@ -12,11 +12,11 @@
   background-color: gray;
 }
 
-.demo-card-container .demo-card-blue {
+.demo-card-blue {
   background-color: #b0becc;
 }
 
-.demo-card-container .mat-card-actions {
+.demo-card-blue .mat-card-actions {
   display: flex;
   flex-direction: column;
 }

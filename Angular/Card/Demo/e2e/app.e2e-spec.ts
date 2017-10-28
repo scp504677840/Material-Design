@@ -1,10 +1,10 @@
-import { MaterialDesignPage } from './app.po';
+import { CherceyPage } from './app.po';
 
-describe('material-design App', () => {
-  let page: MaterialDesignPage;
+describe('chercey App', () => {
+  let page: CherceyPage;
 
   beforeEach(() => {
-    page = new MaterialDesignPage();
+    page = new CherceyPage();
   });
 
   it('should display welcome message', () => {
