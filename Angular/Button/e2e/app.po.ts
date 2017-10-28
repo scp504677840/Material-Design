@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class MaterialDesignPage {
+export class CherceyPage {
   navigateTo() {
     return browser.get('/');
   }
