@@ -1,0 +1,9 @@
+.demo-card-blue {
+  background-color: #b0becc;
+  margin: 2%;
+}
+
+.demo-card-blue .mat-card-actions {
+  display: flex;
+  flex-direction: column;
+}
