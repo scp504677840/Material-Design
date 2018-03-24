@@ -1,0 +1,74 @@
+<mat-card>
+
+  <mat-toolbar color="primary">Basic</mat-toolbar>
+
+  <mat-card-content>
+
+    <form>
+
+      <mat-form-field>
+        <mat-label>Company (disabled)</mat-label>
+        <input matInput disabled value="Google">
+      </mat-form-field>
+
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-label>First Name</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <mat-label>Long last name that will be truncated</mat-label>
+              <input matInput placeholder="name">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <textarea matInput>1600 Amphitheatre Pkway</textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Address 2</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </p>
+
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-label>City</mat-label>
+              <input matInput value="Mountain View">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <mat-label>State</mat-label>
+              <input matInput maxlength="2" value="CA">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <mat-label>Postal code</mat-label>
+              <input matInput #postalCode maxlength="5" value="94043" pattern="[0-9]{5}">
+              <mat-hint align="end">
+                <mat-icon>mode_edit</mat-icon>
+                <span>{{postalCode.value.length}} / 5</span>
+              </mat-hint>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+    </form>
+
+  </mat-card-content>
+
+</mat-card>

@@ -1,0 +1,57 @@
+<mat-card>
+
+  <mat-toolbar color="primary">Divider Colors</mat-toolbar>
+
+  <mat-card-content style="margin: 2%">
+
+    <h4>Input</h4>
+
+    <mat-form-field color="primary">
+      <mat-label>Default color</mat-label>
+      <input matInput value="example">
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <mat-label>Accent Color</mat-label>
+      <input matInput value="example">
+    </mat-form-field>
+    <mat-form-field color="warn">
+      <mat-label>Warn Color</mat-label>
+      <input matInput value="example">
+    </mat-form-field>
+
+    <h4>Textarea</h4>
+
+    <mat-form-field color="primary">
+      <mat-label>Default Color</mat-label>
+      <textarea matInput>example</textarea>
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <mat-label>Accent Color</mat-label>
+      <textarea matInput>example</textarea>
+    </mat-form-field>
+    <mat-form-field color="warn">
+      <mat-label>Warn Color</mat-label>
+      <textarea matInput>example</textarea>
+    </mat-form-field>
+
+    <h4>With error</h4>
+
+    <mat-form-field color="primary">
+      <mat-label>Default Color</mat-label>
+      <input matInput [(ngModel)]="dividerColorExample1" required>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <mat-label>Accent Color</mat-label>
+      <input matInput [(ngModel)]="dividerColorExample2" required>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+    <mat-form-field color="warn">
+      <mat-label>Warn Color</mat-label>
+      <input matInput [(ngModel)]="dividerColorExample3" required>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+  </mat-card-content>
+
+</mat-card>

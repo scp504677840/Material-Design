@@ -1,0 +1,125 @@
+<mat-card>
+
+  <mat-toolbar color="primary">
+    <span>
+      Hello&nbsp;
+      <mat-form-field color="accent">
+        <mat-label>First name</mat-label>
+        <input matInput [(ngModel)]="name" type="text">
+      </mat-form-field>
+      how are you?
+    </span>
+  </mat-toolbar>
+
+  <mat-card-content style="padding: 2%">
+
+    <mat-form-field>
+      <mat-label>Disabled field</mat-label>
+      <input matInput disabled value="Value">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Required field</mat-label>
+      <input matInput required>
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%">
+      <mat-label>100% width label</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Character count (100 max)</mat-label>
+      <input matInput #input maxlength="100">
+      <mat-hint align="end">{{input.value.length}} / 100</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput>
+      <mat-label>
+        I
+        <mat-icon>favorite</mat-icon>
+        <b>bold</b> label
+      </mat-label>
+      <mat-hint>I also
+        <mat-icon>home</mat-icon>
+        <i>italic</i> hint labels
+      </mat-hint>
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Hint label">
+      <mat-label>Show hint label with character count</mat-label>
+      <input matInput #hintLabelWithCharCount>
+      <mat-hint align="end">{{hintLabelWithCharCount.value.length}}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>输入文字进行计数</mat-label>
+      <textarea matInput #longHint></textarea>
+      <mat-hint>输入一些文字来计算其中有多少个字符。 字符数显示在右侧。</mat-hint>
+      <mat-hint align="end" style="white-space: nowrap">{{longHint.value.length}}</mat-hint>
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="color">Check to change the color:</mat-checkbox>
+    <mat-form-field [color]="color ? 'primary' : 'accent'">
+      <input matInput [placeholder]="color ? 'primary' : 'accent'">
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="requiredField"> Check to make required:</mat-checkbox>
+    <mat-form-field>
+      <input matInput [required]="requiredField"
+             [placeholder]="requiredField ? 'Required field' : 'Not required field'">
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="hideRequiredMarker">Check to hide the required marker:</mat-checkbox>
+    <mat-form-field [hideRequiredMarker]="hideRequiredMarker">
+      <input matInput required
+             [placeholder]="hideRequiredMarker ? 'Required Without Marker' : 'Required With Marker'">
+    </mat-form-field>
+
+    <mat-button-toggle-group [(ngModel)]="floatingLabel">
+      <mat-button-toggle value="auto">Auto Float</mat-button-toggle>
+      <mat-button-toggle value="always">Always Float</mat-button-toggle>
+      <mat-button-toggle value="never">Never Float</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-form-field [floatLabel]="floatingLabel">
+      <mat-label>Label</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field [floatLabel]="floatingLabel">
+      <mat-label>What is your favorite color?</mat-label>
+      <input matInput type="color" value="#00ff00">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Prefixed</mat-label>
+      <input matInput>
+      <span matPrefix>Example:&nbsp;</span>
+    </mat-form-field>
+
+    <mat-form-field style="text-align: end">
+      <mat-label>Suffixed</mat-label>
+      <input matInput value="123">
+      <span matSuffix>.00 €</span>
+    </mat-form-field>
+
+    <mat-form-field style="text-align: end">
+      <mat-label>Email address</mat-label>
+      <input matInput #email value="angular-core">
+      <span matPrefix><mat-icon [class.primary]="email.focused">email</mat-icon>&nbsp;</span>
+      <span matSuffix [class.primary]="email.focused">&nbsp;@gmail.com</span>
+    </mat-form-field>
+
+    <p>
+      Empty:
+      <mat-form-field><input matInput></mat-form-field>
+      <label>Label:
+        <mat-form-field><input matInput></mat-form-field>
+      </label>
+    </p>
+
+  </mat-card-content>
+
+</mat-card>

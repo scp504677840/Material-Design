@@ -1,0 +1,39 @@
+<mat-card>
+
+  <mat-toolbar color="primary">Number Inputs</mat-toolbar>
+
+  <mat-card-content style="padding: 2%">
+
+    <table style="width: 100%">
+
+      <thead>
+      <td>Table</td>
+      <td colspan="3">
+        <button (click)="addAbunch(5)">Add 5</button>
+        <button (click)="addAbunch(10)">Add 10</button>
+        <button (click)="addAbunch(100)">Add 100</button>
+        <button (click)="addAbunch(1000)">Add 1000</button>
+      </td>
+      </thead>
+
+      <tr *ngFor="let item of items;let i = index">
+        <td>{{i+1}}</td>
+        <td>
+          <mat-form-field>
+            <mat-label>Value</mat-label>
+            <input matInput type="number" [(ngModel)]="items[i].value">
+          </mat-form-field>
+        </td>
+        <td>
+          <input type="number" matInput [(ngModel)]="items[i].value">
+        </td>
+        <td>
+          {{item.value}}
+        </td>
+      </tr>
+
+    </table>
+
+  </mat-card-content>
+
+</mat-card>

@@ -1,0 +1,61 @@
+<mat-card>
+
+  <mat-toolbar color="primary">Error Messages</mat-toolbar>
+
+  <mat-card-content>
+
+    <h4>Regular</h4>
+
+    <p>
+      <mat-form-field>
+        <mat-label>Example</mat-label>
+        <input matInput [(ngModel)]="errorMessageExample1" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="emailFormControl">
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          This field is required
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('pattern')">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <h4>With hint</h4>
+
+    <mat-form-field>
+      <mat-label>Example</mat-label>
+      <input matInput [(ngModel)]="errorMessageExample2" required>
+      <mat-error>这是必填栏</mat-error>
+      <mat-hint>请在这里输入内容</mat-hint>
+    </mat-form-field>
+
+    <form novalidate>
+
+      <h4>在表单内</h4>
+
+      <mat-form-field>
+        <mat-label>Example</mat-label>
+        <input matInput name="example" [(ngModel)]="errorMessageExample3" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary">Submit</button>
+
+    </form>
+
+    <h4>具有自定义错误功能</h4>
+
+    <mat-form-field>
+      <mat-label>Example</mat-label>
+      <input matInput [(ngModel)]="errorMessageExample4" [errorStateMatcher]="customErrorStateMatcher" required>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+  </mat-card-content>
+
+</mat-card>

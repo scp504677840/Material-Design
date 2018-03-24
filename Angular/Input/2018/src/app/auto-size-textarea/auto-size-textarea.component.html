@@ -1,0 +1,29 @@
+<mat-card>
+
+  <mat-toolbar color="accent">AutoSize Textarea</mat-toolbar>
+
+  <mat-card-content style="padding: 2%">
+
+    <h3>Regular &lt;textarea&gt;</h3>
+
+    <textarea style="width: 100%" matTextareaAutosize matAutosizeMaxRows="5"></textarea>
+
+    <h3>&lt;textarea&gt; with mat-form-field</h3>
+
+    <mat-form-field>
+      <textarea matInput matTextareaAutosize matAutoSizeMaxRows="3"></textarea>
+    </mat-form-field>
+
+    <h3>&lt;textarea&gt; with ngModel</h3>
+    <div>
+      <label>Input with same ngModel <input [(ngModel)]="textareaNgModelValue"></label>
+    </div>
+
+    <label>
+      Plain textarea with auto size
+      <textarea matTextareaAutosize [(ngModel)]="textareaNgModelValue"></textarea>
+    </label>
+
+  </mat-card-content>
+
+</mat-card>

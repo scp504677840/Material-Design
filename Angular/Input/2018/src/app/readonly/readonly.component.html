@@ -1,0 +1,17 @@
+<mat-card>
+
+  <mat-toolbar color="primary">Read Only</mat-toolbar>
+
+  <mat-card-content style="padding: 2%">
+
+    <mat-form-field>
+      <mat-label>Read Only</mat-label>
+      <input matInput [readonly]="readonly">
+      <mat-hint>请在这里输入内容</mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="readonly = !readonly">Toggle ReadOnly</button>
+
+  </mat-card-content>
+
+</mat-card>

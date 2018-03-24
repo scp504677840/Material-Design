@@ -1,0 +1,32 @@
+<mat-card>
+
+  <mat-toolbar color="accent">FormsInputs</mat-toolbar>
+
+  <mat-card-content style="padding: 2%">
+
+    <mat-form-field>
+      <mat-label>Reactive</mat-label>
+      <input matInput [formControl]="formControl">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Template</mat-label>
+      <input matInput [(ngModel)]="model" required [disabled]="ctrlDisabled">
+    </mat-form-field>
+    <button mat-raised-button color="warn" (click)="formControl.enabled ? formControl.disable() : formControl.enable()">
+      DISABLE REACTIVE CTRL
+    </button>
+    <button mat-raised-button color="accent" (click)="ctrlDisabled = !ctrlDisabled">
+      DISABLE TD CTRL
+    </button>
+
+    <div>
+      <mat-form-field>
+        <mat-label>延迟值</mat-label>
+        <input matInput [formControl]="delayedFormControl">
+      </mat-form-field>
+    </div>
+
+  </mat-card-content>
+
+</mat-card>

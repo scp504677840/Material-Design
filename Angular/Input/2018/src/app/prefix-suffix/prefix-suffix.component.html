@@ -1,0 +1,42 @@
+<mat-card>
+
+  <mat-toolbar>
+    Prefix + Suffix
+  </mat-toolbar>
+
+  <mat-card-content style="margin: 2%">
+
+    <h4>Text</h4>
+
+    <mat-form-field style="text-align: end">
+      <mat-label>Amount</mat-label>
+      <input matInput>
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
+
+    <h4>Icons</h4>
+
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput type="number">
+      <mat-icon matPrefix>attach_money</mat-icon>
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+
+    <h4>Icon Buttons</h4>
+
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput type="number">
+      <button mat-icon-button matPrefix>
+        <mat-icon>attach_money</mat-icon>
+      </button>
+      <button mat-icon-button matSuffix>
+        <mat-icon>mode_edit</mat-icon>
+      </button>
+    </mat-form-field>
+
+  </mat-card-content>
+
+</mat-card>
