@@ -1,0 +1,9 @@
+.wrap {
+  margin: 2%;
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
