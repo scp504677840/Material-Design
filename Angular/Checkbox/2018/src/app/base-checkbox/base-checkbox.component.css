@@ -1,0 +1,9 @@
+.mat-card {
+  margin: 2%;
+  padding: 0;
+}
+
+.mat-pseudo-checkbox{
+  display: flex;
+  margin: 1%;
+}

@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-content style="padding: 2%">
+    <h1>Tasks</h1>
+    <ul>
+      <li *ngFor="let task of tasks">
+        <mat-checkbox [(ngModel)]="task.completed"
+                      [checked]="allComplete(task)"
+                      [indeterminate]="someComplete(task.subtasks)"
+                      (change)="setAllCompleted(task.subtasks,$event.checked)">
+          <h3>{{task.name}}</h3>
+        </mat-checkbox>
+        <ul>
+          <li *ngFor="let subtask of task.subtasks">
+            <mat-checkbox [(ngModel)]="subtask.completed">
+              {{subtask.name}}
+            </mat-checkbox>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>{{tasks | json}}</p>
+  </mat-card-content>
+</mat-card>
